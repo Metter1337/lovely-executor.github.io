@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovely Executor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" result="noise"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');
+      background-repeat: repeat;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .circle-move {
+      animation: moveCircle 10s ease-in-out infinite alternate;
+    }
+    @keyframes moveCircle {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+      100% { transform: translate(0, 0); }
+    }
+    .circle-move2 {
+      animation: moveCircle2 12s ease-in-out infinite alternate;
+    }
+    @keyframes moveCircle2 {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-20px, 20px); }
+      100% { transform: translate(0, 0); }
+    }
+    /* Плавное движение кнопок при наведении с тенью и поднятием */
+    .btn-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: inline-block;
+    }
+    .btn-hover:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-white font-sans">
+  
+  <!-- Hero section -->
+  <div class="text-center p-8 fade-in" style="animation-delay: 0.2s">
+    <h1 class="text-5xl font-extrabold drop-shadow-lg mb-6">Lovely Executor</h1>
+    <p class="text-lg mb-10 opacity-90">Best executor on roblox, 99% UNC and 98% sUNC with keyless</p>
+
+    <!-- Download button -->
+    <a href="https://github.com/Metter1337/lovely-executor.github.io/releases/download/s/Lovely.Executor.zip" class="btn-hover px-8 py-4 bg-red-600 text-white font-bold text-lg rounded-2xl shadow-xl">
+  Download
+</a>
+
+  </div>
+
+  <!-- Decorative visuals -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="w-96 h-96 bg-red-800 opacity-40 rounded-full blur-3xl absolute top-10 left-10 circle-move"></div>
+    <div class="w-80 h-80 bg-red-900 opacity-40 rounded-full blur-3xl absolute bottom-20 right-20 circle-move2"></div>
+  </div>
+
+  <!-- Footer with Discord -->
+  <footer class="absolute bottom-6 fade-in" style="animation-delay: 0.5s">
+    <a href="https://dsc.gg/getlovely" target="_blank" class="btn-hover flex items-center gap-2 px-6 py-3 bg-red-800 rounded-full shadow-lg">
+      <i class="fab fa-discord text-2xl"></i>
+      <span class="font-semibold">Discord Server</span>
+    </a>
+  </footer>
+
+</body>
+</html>
